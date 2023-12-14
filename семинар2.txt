@@ -1,0 +1,41 @@
+from math import factorial
+def comb(n, k):
+    return factorial(n) / (factorial(n - k) * factorial(k))
+def bernuli(n, p, k):
+    return comb(n, k) * p ** k * (1 - p) ** (n - k)
+n = 2000
+k = 3
+p = 0.0015
+l = n * p
+P = l ** k / factorial(k) * 2.718 ** (-l) #формула Пуассона
+P
+
+
+
+
+P = bernuli(n, p, k)   #формула Бернулли
+P
+
+
+# ско - среднее квадратичное отклонение, корень из дисперсии
+n = 50
+p = 0.6
+q = 1 -p
+D = n * p * q
+s = D ** 0.5
+s
+
+
+p_0 = bernuli(4, 0.5, 0)
+p_1 = bernuli(4, 0.5, 1)
+P = p_0 + p_1
+P
+
+
+n = 5
+k = 2
+p = 0.9
+P = bernuli(n, p, k)
+P
+
+
